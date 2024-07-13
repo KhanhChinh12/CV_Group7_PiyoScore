@@ -9,3 +9,6 @@
 2. Nguyễn Mai Linh 
 
 3. Lê Thị Nhi
+
+### Models: 
+[Train YOLO](https://drive.google.com/file/d/1B9jk0x0b7tqvYY4Aaib2x9lPb_nkgOua/view?usp=sharing)
