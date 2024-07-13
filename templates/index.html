@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyoscore - Phân tích trận đấu bóng đá </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/188/188864.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://t4.ftcdn.net/jpg/05/12/61/05/360_F_512610544_0excDel8sZTq4W0XLJTSehr9dZfOqi5R.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .logo{
+            display: block; 
+            padding: 20px 30px;
+            color: white;
+            font-family: "Arsenal", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 20px;
+        }
+        .title{
+            display: block; 
+            text-align: center;
+            color: white;
+            font-size: 60px;
+            margin-top: 150px;
+            font-family: "Agrandir", sans-serif;
+            height: 30px;
+        }
+        .pt{
+            font-size: 20px;
+            padding-top: 10px;
+            display: block; 
+            text-align: center; 
+            margin: 0 auto; 
+            max-width: 600px; 
+            color: white;
+            font-family: "OpenSauceOne-Medium", sans-serif;
+            height: 30px;
+        }
+        .upload-form {
+            text-align: center;
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-family: "OpenSauceOne-Medium", sans-serif;
+        }
+        input[type="file"] {
+            font-size: 16px;
+            padding-left: 25px;
+            width: 320px;
+            color: white;
+        }
+        .upload-form button[type="submit"] {
+            margin-top: 30px;
+            background-color: rgb(41, 112, 219); 
+            color: white; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            border: none; 
+            width: 200px;
+            border-radius: 25px;
+            cursor: pointer; 
+        }
+        #loadingScreen {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            z-index: 1000;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label class="logo"> Piyoscore </label>
+    <h1 class="title">Piyoscore</h1>
+    <label class="pt"> Phân tích dữ liệu cho trận đấu bóng đá  </label>
+    <form class="upload-form" action="/upload" method="post" enctype="multipart/form-data" onsubmit="showLoadingScreen()">
+        <input type="file" name="videoFile" accept="video/mp4">
+        <br>
+        <button type="submit">Tải video lên</button>
+    </form>
+    <div id="loadingScreen" style="display: none;">
+        Đang xử lý video, vui lòng đợi...
+    </div>
+    <script>
+        function showLoadingScreen() {
+            document.getElementById("loadingScreen").style.display = "flex";
+        }
+    </script>
+</body>
+</html>
